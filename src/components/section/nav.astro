@@ -1,0 +1,335 @@
+---
+---
+
+<header class="main-header" id="mainHeader">
+  <div class="header-container">
+
+    <!-- LOGO -->
+    <a href="/" class="logo">
+      <img
+        src="https://terraandinahotel.com/assets/Logo-TAH-ENG.B5WGhyCC_Z25QO5V.png"
+        alt="Terra Andina Colonial Mansion"
+      />
+    </a>
+
+    <!-- MENÚ MÓVIL -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#">EL HOTEL</a></li>
+        <li><a href="#">HABITACIONES</a></li>
+        <li><a href="#">RESTAURANTE</a></li>
+        <li><a href="#">EXPERIENCIAS</a></li>
+        <li><a href="#">GALERÍA</a></li>
+        <li><a href="#">UBICACIÓN</a></li>
+      </ul>
+    </nav>
+
+    <!-- ACCIONES -->
+    <div class="header-actions">
+      <a href="#reservar" class="btn-reservar">RESERVAR AHORA</a>
+      <div class="lang-switch">
+        <a href="#" class="active">ES</a>
+        <span>|</span>
+        <a href="#">EN</a>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<script>
+  // Efecto blur al hacer scroll
+  const header = document.getElementById('mainHeader');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > 60) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
+
+<style>
+  /* ===== HEADER BASE (transparente sobre el hero) ===== */
+  .main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.4) 60%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    transition: 
+      height 0.4s ease,
+      background 0.4s ease,
+      backdrop-filter 0.4s ease,
+      box-shadow 0.4s ease;
+  }
+
+  /* ===== HEADER AL HACER SCROLL (efecto blur) ===== */
+  .main-header.scrolled {
+    height: 80px;
+    background: rgba(15, 12, 8, 0.65);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+  }
+
+  .header-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    transition: padding 0.4s ease;
+  }
+
+  /* ===== LOGO ===== */
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    z-index: 1001;
+  }
+
+  .logo img {
+    width: 130px;
+    height: auto;
+    display: block;
+    transition: width 0.4s ease;
+  }
+
+  .main-header.scrolled .logo img {
+    width: 105px;
+  }
+
+  /* ===== NAVEGACIÓN ===== */
+  .main-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .main-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 4px;
+  }
+
+  .main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #C5A059;
+    transition: width 0.3s ease;
+  }
+
+  .main-nav a:hover {
+    color: #C5A059;
+  }
+
+  .main-nav a:hover::after {
+    width: 100%;
+  }
+
+  /* ===== ACCIONES ===== */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .btn-reservar {
+    background-color: #C5A059;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    padding: 14px 28px;
+    border-radius: 2px;
+    transition: background-color 0.3s ease, transform 0.3s ease, padding 0.4s ease;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .btn-reservar:hover {
+    background-color: #A88745;
+    transform: translateY(-1px);
+  }
+
+  .main-header.scrolled .btn-reservar {
+    padding: 11px 22px;
+  }
+
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .lang-switch a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.55);
+    transition: color 0.3s ease;
+  }
+
+  .lang-switch a:hover,
+  .lang-switch a.active {
+    color: #ffffff;
+  }
+
+  .lang-switch span {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 10px;
+  }
+
+  /* ===== MENÚ HAMBURGUESA ===== */
+  .menu-toggle {
+    display: none;
+  }
+
+  .menu-icon {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .menu-icon span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: 0.3s;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1200px) {
+    .header-container {
+      padding: 0 30px;
+    }
+    .main-nav ul {
+      gap: 20px;
+    }
+    .main-nav a {
+      font-size: 10px;
+      letter-spacing: 1.2px;
+    }
+    .btn-reservar {
+      padding: 12px 20px;
+      font-size: 10px;
+    }
+    .logo img {
+      width: 110px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .main-header {
+      height: 90px;
+    }
+    .main-header.scrolled {
+      height: 70px;
+    }
+    .header-container {
+      padding: 0 20px;
+    }
+
+    .menu-icon {
+      display: flex;
+    }
+
+    .main-nav {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100vh;
+      background: rgba(15, 12, 8, 0.98);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: left 0.4s ease;
+      z-index: 1000;
+    }
+
+    .main-nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .main-nav a {
+      font-size: 18px;
+      letter-spacing: 3px;
+    }
+
+    .header-actions {
+      display: none;
+    }
+
+    .menu-toggle:checked ~ .main-nav {
+      left: 0;
+    }
+
+    .menu-toggle:checked ~ .menu-icon span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle:checked ~ .menu-icon span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle:checked ~ .menu-icon span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    .logo img {
+      width: 100px;
+    }
+  }
+</style>

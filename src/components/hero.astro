@@ -1,0 +1,321 @@
+---
+import { Image } from 'astro:assets';
+import fondo from '../assets/images/suite_win.jpg';
+---
+
+<section class="hero-section">
+
+  <!-- Imagen de fondo -->
+  <Image
+    src={fondo}
+    alt="Suite Colonial"
+    class="hero-bg"
+    aria-hidden="true"
+  />
+
+  <!-- Overlay con gradiente -->
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <!-- Contenido -->
+  <div class="hero-container">
+
+    <!-- Bloque de texto (izquierda) -->
+    <div class="hero-content">
+
+      <!-- Subtítulo con línea -->
+      <div class="hero-subtitle">
+        <span class="hero-subtitle-text">SUITE</span>
+        <div class="hero-subtitle-line"></div>
+      </div>
+
+      <h1 class="hero-title">
+        LA SUITE<br />
+        COLONIAL
+      </h1>
+
+      <!-- Descripción -->
+      <p class="hero-description">
+        Amplitud, historia y confort<br />
+        en el corazón de Cusco.
+      </p>
+
+      <!-- Botón -->
+      <a href="#reservar" class="hero-button">
+        RESERVAR AHORA
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+</svg>
+      </a>
+
+      <!-- Texto inferior con barra vertical -->
+      <div class="hero-footer-text">
+        <div class="hero-footer-bar"></div>
+        <div>
+          <p>UNA CASONA COLONIAL,</p>
+          <p>UNA EXPERIENCIA INOLVIDABLE</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Slider / paginación (abajo derecha) -->
+    <div class="hero-pagination">
+      <span class="hero-page active">01</span>
+      <span class="hero-page">02</span>
+      <span class="hero-page">03</span>
+      <span class="hero-page">04</span>
+    </div>
+
+  </div>
+
+    <!-- Línea decorativa inferior (progreso)
+    <div class="hero-progress" aria-hidden="true"></div> -->
+
+</section>
+
+<style>
+  /* ====== SECCIÓN ====== */
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ====== IMAGEN ====== */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  /* ====== OVERLAY GRADIENTE ====== */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgb(0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.733) 24%,
+      rgba(0, 0, 0, 0.274) 48%,
+      rgba(0, 0, 0, 0.178) 72%,
+      rgba(0, 0, 0, 0.048) 100%
+    );
+  }
+
+  /* ====== CONTENEDOR ====== */
+  .hero-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* ====== CONTENIDO TEXTO ====== */
+  .hero-content {
+    max-width: 620px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  /* ====== SUBTÍTULO ====== */
+  .hero-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .hero-subtitle-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    color: #C5A059;
+  }
+
+  .hero-subtitle-line {
+    width: 80px;
+    height: 1px;
+    background-color: #C5A059;
+  }
+
+  /* ====== TÍTULO ====== */
+  .hero-title {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: clamp(48px, 6vw, 78px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-description {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0.7px;
+    line-height: 1.5;
+    color: #f0f0f0;
+    margin: 0;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    width: fit-content;
+    padding: 14px 28px;
+    background-color: #C5A059;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+  }
+
+  .hero-button:hover {
+    background-color: #b08d47;
+    transform: translateY(-2px);
+  }
+
+  .hero-button-arrow {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  /* ====== TEXTO INFERIOR ====== */
+  .hero-footer-text {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #d0d0d0;
+    text-transform: uppercase;
+  }
+
+  .hero-footer-text p {
+    margin: 0;
+    line-height: 1.8;
+  }
+
+  .hero-footer-bar {
+    width: 3px;
+    height: 40px;
+    background-color: #C5A059;
+  }
+
+  /* ====== PAGINACIÓN ====== */
+  .hero-pagination {
+    position: absolute;
+    bottom: 40px;
+    right: 80px;
+    display: flex;
+    gap: 22px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .hero-page {
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .hero-page.active {
+    color: #ffffff;
+    position: relative;
+  }
+
+  .hero-page.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+  }
+
+  .hero-page:hover {
+    color: #ffffff;
+  }
+
+  /* ====== LÍNEA DE PROGRESO INFERIOR ====== */
+  .hero-progress {
+    position: absolute;
+    bottom: 0;
+    left: 80px;
+    width: 200px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 3;
+  }
+
+  .hero-progress::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    background-color: #C5A059;
+  }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 768px) {
+    .hero-container {
+      padding: 0 24px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .hero-content {
+      max-width: 100%;
+    }
+
+    .hero-pagination {
+      right: 24px;
+      bottom: 24px;
+    }
+
+    .hero-progress {
+      left: 24px;
+      bottom: 24px;
+    }
+
+    .hero-footer-text {
+      margin-top: 40px;
+    }
+  }
+</style>

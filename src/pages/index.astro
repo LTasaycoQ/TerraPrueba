@@ -1,0 +1,88 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/section/nav.astro';
+
+import suite_twin from '../assets/images/suite_twin.jpg';
+import SuiteTwin315 from '../assets/images/SuiteTwin315.jpg';
+import Suitetwinbano2 from '../assets/images/Suite-twin-bano2.jpg';
+import JuniorSuitebano2 from '../assets/images/Junior-Suite-bano2.jpg';
+
+
+import Galeria from '../components/galeria.astro';
+import Hero from '../components/hero.astro';
+import FeatureBar from '../components/featureBar.astro';
+import AboutSection from '../components/AboutSection.astro';
+import CtaFooter from '../components/CtaFooter.astro';
+---
+
+<Layout>
+	<Nav />
+	<Hero />
+
+	<FeatureBar />
+
+
+	<AboutSection />
+
+
+	<Galeria />
+	<CtaFooter />
+
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+		.title_text{
+			font-family: 'Times New Roman', Times, serif;
+			font-size: 3.2rem;
+			font-weight: 300;
+		}
+
+		.container-about{
+			padding: 40px;
+		}
+
+		.titlee_fotter{
+			font-size: 2.8rem;
+			font-weight: 500;
+			color: white;
+
+		}
+
+		.font-about{
+			color:gray;
+			font-size: 22px;
+		}
+
+		.color_span{
+			color: #C5A059;
+			font-weight: 700;
+				  font-family: "Poppins", sans-serif;
+				font-weight: 500;
+				font-style: normal;
+				letter-spacing: 8px;
+				line-height: 1.5;
+
+		}
+
+		.title_pricipal_span{
+			font-family: "Poppins", sans-serif;
+			font-weight: 500;
+			font-size: 11px;
+			font-style: normal;
+			letter-spacing: 4.5px;
+		}
+		.container-about{
+			display:flex;
+			justify-content: center;
+			align-items:center;
+		}
+
+		.ct--feature{
+			margin-top: 10px;
+		}
+
+	</style>
+
+</Layout>

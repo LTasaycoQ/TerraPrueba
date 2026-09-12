@@ -1,0 +1,217 @@
+---
+---
+
+<section class="cta-section">
+  <div class="cta-overlay"></div>
+
+  <div class="cta-container">
+
+    <!-- BLOQUE IZQUIERDO (CTA principal) -->
+    <div class="cta-content">
+      <div class="cta-subtitle">
+        <span>CUSCO TE ESPERA</span>
+        <div class="cta-line"></div>
+      </div>
+
+      <h2 class="cta-title">
+        Vive una experiencia <br />
+        única en el corazón histórico
+      </h2>
+
+      <a href="#reservar" class="cta-button">
+        Reservar Ahora
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M5 12l14 0" />
+          <path d="M15 16l4 -4" />
+          <path d="M15 8l4 4" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- BLOQUE DERECHO (Cita) -->
+    <div class="cta-quote-block">
+      <div class="cta-quote-line"></div>
+      <i class="cta-quote">
+        "El lujo de sentirse <br />
+        parte de la historia"
+      </i>
+      <div class="cta-quote-line"></div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ===== SECCIÓN ===== */
+  .cta-section {
+    position: relative;
+    width: 100%;
+    background-image: url('https://res.cloudinary.com/dlgeap8h0/image/upload/v1778711030/thecolonial-patio-loby_lm4rdb.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  /* Overlay oscuro para que el texto se lea bien */
+  .cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.55) 50%,
+      rgba(0, 0, 0, 0.35) 100%
+    );
+    z-index: 1;
+  }
+
+  .cta-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 90px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  /* ===== BLOQUE IZQUIERDO ===== */
+  .cta-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 600px;
+  }
+
+  .cta-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .cta-subtitle span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #C5A059;
+    text-transform: uppercase;
+  }
+
+  .cta-line {
+    width: 70px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: #C5A059;
+  }
+
+  .cta-title {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: clamp(30px, 3.4vw, 48px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    width: max-content;
+    padding: 16px 42px;
+    background-color: #354635;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background-color 0.3s ease, transform 0.3s ease, gap 0.3s ease;
+    margin-top: 10px;
+  }
+
+  .cta-button:hover {
+    background-color: #C5A059;
+    transform: translateY(-2px);
+    gap: 22px;
+  }
+
+  /* ===== BLOQUE DERECHO (CITA) ===== */
+  .cta-quote-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 420px;
+    padding-left: 60px;
+    border-left: 1px solid rgba(197, 160, 89, 0.3);
+  }
+
+  .cta-quote-line {
+    width: 50px;
+    height: 3px;
+    background-color: #C5A059;
+  }
+
+  .cta-quote {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(20px, 2vw, 28px);
+    line-height: 1.4;
+    color: #ffffff;
+    letter-spacing: 0.3px;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 992px) {
+    .cta-container {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 70px 40px;
+      gap: 50px;
+    }
+
+    .cta-quote-block {
+      padding-left: 0;
+      border-left: none;
+      padding-top: 40px;
+      border-top: 1px solid rgba(197, 160, 89, 0.3);
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .cta-container {
+      padding: 60px 24px;
+    }
+
+    .cta-title {
+      font-size: 26px;
+    }
+
+    .cta-button {
+      padding: 14px 30px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+    }
+
+    .cta-quote {
+      font-size: 18px;
+    }
+
+    .cta-subtitle span {
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+  }
+</style>

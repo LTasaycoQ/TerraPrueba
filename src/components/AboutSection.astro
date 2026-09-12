@@ -1,0 +1,194 @@
+---
+import { Image } from 'astro:assets';
+import aboutImg from '../assets/images/suite_twin.jpg'; 
+---
+
+<section class="container-about">
+  <div class="about-wrapper">
+
+    <div class="about-text-col">
+
+      <div class="about-subtitle">
+        <span class="about-subtitle-text">MÁS QUE UNA HABITACIÓN</span>
+        <div class="about-subtitle-line"></div>
+      </div>
+
+      <!-- Título principal -->
+      <h2 class="about-title">
+        Un espacio excepcional <br />
+        en una casona histórica.
+      </h2>
+
+      <!-- Párrafo descriptivo -->
+      <p class="about-description">
+        Nuestra Suite de 44 m² combina el encanto de la arquitectura colonial
+        con el confort moderno, ofreciendo un ambiente amplio, sofisticado y
+        acogedor. Ideal para quienes buscan una estancia especial en el corazón
+        del Cusco histórico, ya sea por placer o por una ocasión memorable.
+      </p>
+
+      <!-- Frase en cursiva -->
+      <i class="about-quote">
+        Donde la historia y el confort se encuentran.
+      </i>
+
+    </div>
+
+    <!-- COLUMNA DERECHA (Imagen) -->
+    <div class="about-image-col">
+      <Image
+        src={aboutImg}
+        alt="Interior de la suite colonial"
+        class="about-image"
+      />
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ====== SECCIÓN ====== */
+  .container-about {
+    display: flex;
+    justify-content: center;
+    padding: 30px 120px 0px 120px;
+    background-color: #ffffff;
+  }
+
+  .about-wrapper {
+    width: 100%;
+    max-width: 1320px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  /* ====== COLUMNA TEXTO ====== */
+  .about-text-col {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Subtítulo */
+  .about-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .about-subtitle-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #C5A059;
+    text-transform: uppercase;
+  }
+
+  .about-subtitle-line {
+    width: 55px;
+    height: 1.5px;
+    background-color: #C5A059;
+  }
+
+  /* Título */
+  .about-title {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: clamp(32px, 3.5vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    color: #1a1a1a;
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  /* Párrafo */
+  .about-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #4a4a4a;
+    margin: 10px 0 0 0;
+    max-width: 600px;
+  }
+
+  /* Frase en cursiva */
+  .about-quote {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 500;
+    color: #626262;
+    margin-top: 15px;
+    letter-spacing: 0.3px;
+  }
+
+  /* ====== COLUMNA IMAGEN ====== */
+  .about-image-col {
+    position: relative;
+    width: 50%;
+    height: 420px;
+    overflow: hidden;
+  }
+
+  .about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+
+  @media (max-width: 1350px){
+    .container-about {
+    padding: 30px 80px 0px 80px;
+  }
+  }
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 992px) {
+    .about-wrapper {
+      flex-direction: column;
+      gap: 40px;
+    }
+    .container-about{
+        padding: 30px 50px 0px 50px;
+    }
+    .about-text-col,
+    .about-image-col {
+      width: 100%;
+    }
+
+    .about-image-col {
+      height: 320px;
+    }
+
+    .about-description {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .container-about {
+      padding: 50px 20px;
+    }
+
+    .about-title {
+      font-size: 28px;
+    }
+
+    .about-description {
+      font-size: 14px;
+    }
+
+    .about-quote {
+      font-size: 16px;
+    }
+
+    .about-image-col {
+      height: 240px;
+    }
+  }
+</style>
